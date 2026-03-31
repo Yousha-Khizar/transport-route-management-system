@@ -1,8 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Startseite";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">AstraTech Route Planner</h1>
+    <p>Webanwendung zur Berechnung und Verwaltung von Transportrouten.</p>
+
+    <p>
+        <a class="btn btn-primary" asp-controller="TransportRoutes" asp-action="Index">Transportrouten verwalten</a>
+        <a class="btn btn-secondary" asp-controller="Navigation" asp-action="Index">Route berechnen</a>
+    </p>
 </div>
