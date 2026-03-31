@@ -1,3 +1,4 @@
+using AstraTech.Routeplanner.Data;
 using AstraTech.RoutePlanner.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
+
+// DB and Seed data
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+    DbInitializer.Initialize(dbContext);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
