@@ -1,5 +1,4 @@
 using AstraTech.Routeplanner.Data;
-using AstraTech.RoutePlanner.Data;
 using Microsoft.EntityFrameworkCore;
 using AstraTech.Routeplanner.Services;
 

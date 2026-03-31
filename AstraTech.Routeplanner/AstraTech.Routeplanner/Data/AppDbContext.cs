@@ -1,7 +1,7 @@
 ﻿using AstraTech.Routeplanner.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AstraTech.RoutePlanner.Data
+namespace AstraTech.Routeplanner.Data
 {
     public class AppDbContext : DbContext
     {

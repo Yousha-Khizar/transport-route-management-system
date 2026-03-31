@@ -1,5 +1,5 @@
 ﻿using AstraTech.Routeplanner.Models;
-using AstraTech.RoutePlanner.Data;
+using AstraTech.Routeplanner.Data;
 
 namespace AstraTech.Routeplanner.Data
 {

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using AstraTech.Routeplanner.Services;
-using AstraTech.RoutePlanner.Data;
+using AstraTech.Routeplanner.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
