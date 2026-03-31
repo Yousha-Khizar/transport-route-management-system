@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AstraTech.Routeplanner.Models.TransportRoute>
+
+@{
+    ViewData["Title"] = "Transportrouten";
+}
+
+<h1>Transportrouten</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Neue Route anlegen</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Bezeichnung</th>
+            <th>Start</th>
+            <th>Ziel</th>
+            <th>Priorität</th>
+            <th>Status</th>
+            <th>Distanz</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RouteName</td>
+                <td>@item.StartStation?.Name</td>
+                <td>@item.DestinationStation?.Name</td>
+                <td>@item.Priority</td>
+                <td>@item.Status</td>
+                <td>@item.EstimatedDistance</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Bearbeiten</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Löschen</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

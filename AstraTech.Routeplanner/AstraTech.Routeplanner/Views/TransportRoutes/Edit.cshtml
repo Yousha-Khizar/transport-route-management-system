@@ -1,0 +1,57 @@
+﻿@model AstraTech.Routeplanner.Models.TransportRoute
+
+@{
+    ViewData["Title"] = "Route bearbeiten";
+}
+
+<h1>Route bearbeiten</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="RouteName" class="form-label"></label>
+        <input asp-for="RouteName" class="form-control" />
+        <span asp-validation-for="RouteName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="StartStationId" class="form-label"></label>
+        <select asp-for="StartStationId" asp-items="ViewBag.Stations" class="form-select"></select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DestinationStationId" class="form-label"></label>
+        <select asp-for="DestinationStationId" asp-items="ViewBag.Stations" class="form-select"></select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Priority" class="form-label"></label>
+        <select asp-for="Priority" asp-items="ViewBag.Priorities" class="form-select"></select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label"></label>
+        <select asp-for="Status" asp-items="ViewBag.Statuses" class="form-select"></select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="EstimatedDistance" class="form-label"></label>
+        <input asp-for="EstimatedDistance" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Notes" class="form-label"></label>
+        <textarea asp-for="Notes" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Änderungen speichern</button>
+    <a asp-action="Index" class="btn btn-secondary">Zurück</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

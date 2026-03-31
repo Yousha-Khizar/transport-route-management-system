@@ -1,0 +1,26 @@
+﻿@model AstraTech.Routeplanner.Models.TransportRoute
+
+@{
+    ViewData["Title"] = "Route löschen";
+}
+
+<h1>Route löschen</h1>
+
+<h3>Möchtest du diese Route wirklich löschen?</h3>
+
+<dl class="row">
+    <dt class="col-sm-3">Bezeichnung</dt>
+    <dd class="col-sm-9">@Model.RouteName</dd>
+
+    <dt class="col-sm-3">Start</dt>
+    <dd class="col-sm-9">@Model.StartStation?.Name</dd>
+
+    <dt class="col-sm-3">Ziel</dt>
+    <dd class="col-sm-9">@Model.DestinationStation?.Name</dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Löschen</button>
+    <a asp-action="Index" class="btn btn-secondary">Abbrechen</a>
+</form>
