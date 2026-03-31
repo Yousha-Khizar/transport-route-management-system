@@ -1,6 +1,7 @@
 using AstraTech.Routeplanner.Data;
 using AstraTech.RoutePlanner.Data;
 using Microsoft.EntityFrameworkCore;
+using AstraTech.Routeplanner.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<NavigationService>();
 
 var app = builder.Build();
 
