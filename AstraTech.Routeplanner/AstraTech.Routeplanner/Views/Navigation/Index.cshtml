@@ -1,0 +1,49 @@
+﻿@model AstraTech.Routeplanner.Models.RouteCalculationResult
+
+@{
+    ViewData["Title"] = "Routenberechnung";
+}
+
+<h1>Routenberechnung</h1>
+
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label class="form-label">Startstation</label>
+        <select name="fromStationId" asp-items="ViewBag.Stations" class="form-select"></select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Zielstation</label>
+        <select name="toStationId" asp-items="ViewBag.Stations" class="form-select"></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Route berechnen</button>
+</form>
+
+@if (Model != null)
+{
+    <hr />
+
+    <h2>Ergebnis</h2>
+
+    @if (Model.RouteFound)
+    {
+        <p><strong>Start:</strong> @Model.StartStationName</p>
+        <p><strong>Ziel:</strong> @Model.DestinationStationName</p>
+        <p><strong>Gesamtdistanz:</strong> @Model.TotalDistance</p>
+
+        <h4>Pfad</h4>
+        <ol>
+            @foreach (var station in Model.Path)
+            {
+                <li>@station</li>
+            }
+        </ol>
+    }
+    else
+    {
+        <p class="text-danger">Keine Route gefunden.</p>
+    }
+}
