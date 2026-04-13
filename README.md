@@ -3,7 +3,7 @@
 Webbasierte Anwendung zur Berechnung und Verwaltung von Transportrouten.
 
 ## Projektbeschreibung
-Im Rahmen dieses Projekts wird eine ASP.NET-Core-MVC-Webanwendung entwickelt, mit der Transportrouten erfasst, verwaltet und zwischen definierten Standorten berechnet werden können.
+Im Rahmen dieses Projekts wird eine ASP.NET-Core-MVC-Webanwendung entwickelt, mit der Transportrouten erfasst, verwaltet und zwischen definierten Standorten berechnet werden kÃ¶nnen.
 
 ## Technologien
 - C#
@@ -13,4 +13,4 @@ Im Rahmen dieses Projekts wird eine ASP.NET-Core-MVC-Webanwendung entwickelt, mi
 - Git
 
 ## Status
-Projektgrundgerüst erstellt
+Project complete
